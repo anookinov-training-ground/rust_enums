@@ -142,6 +142,22 @@ fn main() {
     if let Some(3) = some_u8_value {
         println!("three");
     }
+
+    let mut count = 0;
+    let coin = Coin::Quarter(UsState::Alabama);
+    
+    // match coin {
+    //     Coin::Quarter(state) => println!("State quarter from {:?}!", state),
+    //     _ => count += 1,
+    // }
+    // println!("count = {}", count);
+
+    if let Coin::Quarter(state) = coin {
+        println!("State quarter from {:?}!", state);
+    } else {
+        count += 1;
+    }
+    println!("count = {}", count);
 }
 
 fn route(ip_kind: IpAddrKind) {
